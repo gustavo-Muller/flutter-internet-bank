@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 // import 'package:internet_bank/database/dao/pessoa_dao.dart';
 // import 'package:internet_bank/models/Pessoa.dart';
 import 'package:internet_bank/screen/login/login_screen.dart';
+import 'package:internet_bank/services/auth.dart';
+import 'package:provider/provider.dart';
+import 'package:internet_bank/models/user.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,11 +20,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginScreen(),
+    return StreamProvider<User>.value(
+      value: AuthService().user,
+//      title: 'Flutter Demo',
+//      theme: ThemeData(primarySwatch: Colors.blue),
+      child: MaterialApp(
+        home: LoginScreen(),
+      ),
     );
   }
 }

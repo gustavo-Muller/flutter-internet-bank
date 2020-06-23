@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "85659833775",
+    "firebase_url": "https://eureka-1d926.firebaseio.com",
+    "project_id": "eureka-1d926",
+    "storage_bucket": "eureka-1d926.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85659833775:android:174525ec5614d9e9788b5a",
+        "android_client_info": {
+          "package_name": "com.example.internet_bank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85659833775-tm0vd84eoumgg5kb51kln6470d9ui41r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBe_VvpY_zDP1AaEeDMVqCCC1zUBeS28s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85659833775-tm0vd84eoumgg5kb51kln6470d9ui41r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
