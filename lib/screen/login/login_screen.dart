@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:internet_bank/screen/home/home_screen.dart';
 import 'package:internet_bank/screen/login/login_register.dart';
-import 'package:internet_bank/services/auth.dart';
+//import 'package:internet_bank/services/auth.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -13,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   var _usuarioController = TextEditingController();
   var _senhaController = TextEditingController();
   var _isSecured = true;
-  var _auth = AuthService();
+  //var _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +61,6 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 40, right: 40),
               child: RaisedButton(
-                /*
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen())),
-                */
-
                 onPressed: logar,
                 color: Color.fromRGBO(25, 8, 42, 0.8),
                 splashColor: Color.fromRGBO(85, 175, 246, 1),
@@ -110,14 +105,12 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> logar() async {
     if (_usuarioController.value != null && _senhaController != null) {
       try {
-        var user = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: _usuarioController.text,
-          password: _senhaController.text,
+        await FirebaseAuth.instance.signInWithEmailAndPassword(email: _usuarioController.text, password: _senhaController.text,
         );
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
       } catch (e) {
-        print(e.message);
+        return null;
       }
     }
   }

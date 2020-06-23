@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:internet_bank/models/user.dart';
 
-class AuthService {
+class CadastrarService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   //entrar
@@ -13,23 +13,12 @@ class AuthService {
     return _auth.onAuthStateChanged.map(_userFromFirebaseUser);
   }
 
-  Future registerWithEmailAndPassword(String email, String senha) async {
-    try {
-      AuthResult result = await _auth.createUserWithEmailAndPassword(
-          email: email, password: senha);
-      FirebaseUser user = result.user;
-      return this._userFromFirebaseUser(user);
-    } catch (e) {
-      print(e.toString());
-      return null;
-    }
-  }
-
   Future singIn(String email, String senha) async {
     try {
       AuthResult result = await _auth.signInWithEmailAndPassword(
           email: email.trim(), password: senha);
       FirebaseUser user = result.user;
+
       return this._userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());

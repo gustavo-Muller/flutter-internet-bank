@@ -14,7 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final _screenSize = MediaQuery.of(context).size;
     final _cardSize = _screenSize.width - 30;
     var _accountName = TextEditingController();
-    _accountName.text = "Müller";
+    _accountName.text = "Bem Vindo(a)!R";
+
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(85, 175, 246, 1),
